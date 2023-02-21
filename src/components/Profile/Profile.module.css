@@ -2,7 +2,7 @@
     grid-area: c;
     background-color: cornflowerblue;
 }
-.content img{
+.contentMainBg{
     display: block;
     margin: 0 auto;
     width: 60%
