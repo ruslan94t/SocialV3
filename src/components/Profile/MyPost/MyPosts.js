@@ -19,7 +19,9 @@ function MyPosts(props) {
                     <button>Remove Post</button>
                 </div>
                 <div className={s.posts}>
-                   <Post />
+                   <Post message="hi how you" />
+                   <Post message="its my first post" />
+
 
 
                 </div>
