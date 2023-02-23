@@ -9,7 +9,14 @@ padding: 10px;
 }
 
 .dialog{
+    padding: 4px;
 
+}
+.dialog a{
+    font-family: Calibri;
+    font-size: 17px;
+    text-decoration: none;
+    color: white;
 }
 .messages{
 padding: 10px;

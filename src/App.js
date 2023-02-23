@@ -1,4 +1,7 @@
-import {Route, Routes} from "react-router-dom";
+import {Switch,
+    Route,
+    Link,
+    useRouteMatch} from "react-router-dom";
 import './App.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
@@ -13,10 +16,18 @@ const App= ()=> {
         <Header />
         <Navbar />
         <div className="app-wrapper-content">
-            <Routes>
-                <Route path="/dialogs" element={<Dialogs />} />
-                <Route path="/profile" element={<Profile />} />
-            </Routes>
+            <Switch>
+                <Route  path="/dialogs" >
+                    <Dialogs />
+                </Route>
+            </Switch>
+            <Switch>
+                <Route path="/profile" >
+                    <Profile />
+                </Route>
+            </Switch>
+
+
 
         </div>
 
