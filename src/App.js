@@ -10,7 +10,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 
 
 
-const App= ()=> {
+const App= (props)=> {
   return (
     <div className="app-wrapper">
         <Header />
@@ -18,12 +18,15 @@ const App= ()=> {
         <div className="app-wrapper-content">
             <Switch>
                 <Route  path="/dialogs" >
-                    <Dialogs />
+                    <Dialogs
+                    messages={props.messages}
+                    dialogs={props.dialogs}
+                    />
                 </Route>
             </Switch>
             <Switch>
                 <Route path="/profile" >
-                    <Profile />
+                    <Profile posts={props.posts}/>
                 </Route>
             </Switch>
 
