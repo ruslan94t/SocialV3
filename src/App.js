@@ -1,7 +1,6 @@
 import {Switch,
     Route,
-    Link,
-    useRouteMatch} from "react-router-dom";
+  } from "react-router-dom";
 import './App.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
@@ -19,19 +18,19 @@ const App= (props)=> {
             <Switch>
                 <Route  path="/dialogs" >
                     <Dialogs
-                    messages={props.messages}
-                    dialogs={props.dialogs}
+                    state={props.state.messagesPage}
+
                     />
                 </Route>
             </Switch>
             <Switch>
                 <Route path="/profile" >
-                    <Profile posts={props.posts}/>
+                    <Profile
+                        addPost={props.addPost}
+                        state={props.state.profilePage}
+                    />
                 </Route>
             </Switch>
-
-
-
         </div>
 
     </div>

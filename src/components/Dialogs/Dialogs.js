@@ -11,10 +11,12 @@ function Dialogs(props) {
 
 
 
-let dialogsElements = props.dialogs.map(d=> <DialogItem
+let dialogsElements = props.state.dialogs
+    .map(d=> <DialogItem
     key={d.id}
     name={d.name} id={d.id} />)
-    let messageElements = props.messages.map(m=> <Message key={m.id} message={m.message} />)
+    let messageElements = props.state.messages
+        .map(m=> <Message key={m.id} message={m.message} />)
 
     return (
         <div className={s.dialogs}>
