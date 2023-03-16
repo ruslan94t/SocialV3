@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
+import {updateNewPostText} from "./redux/state";
 
 
 
@@ -26,8 +27,9 @@ const App= (props)=> {
             <Switch>
                 <Route path="/profile" >
                     <Profile
+                        updateNewPostText={props.updateNewPostText}
                         addPost={props.addPost}
-                        state={props.state.profilePage}
+                        profilePage={props.state.profilePage}
                     />
                 </Route>
             </Switch>
