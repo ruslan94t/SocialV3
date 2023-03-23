@@ -1,3 +1,8 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+
+
+
 let store ={
     _state :{
 
@@ -7,9 +12,9 @@ let store ={
                 {id: 1, message: "how you", likesCount: 3},
                 {id: 2, message: "its began", likesCount: 2},
             ],
-            newPostText:'it Kama',
+            newPostText:'it kama',
         },
-        messagesPage:{
+        dialogsPage:{
             dialogs :[
                 {id:0, name:"Dima"},
                 {id:1, name:"Sasha"},
@@ -23,6 +28,7 @@ let store ={
                 {id:3, message:"yo yo eeeee"},
                 {id:4, message:"yo yo new yo"},
             ],
+            newMessageBody:'',
         },
 
 
@@ -51,8 +57,16 @@ let store ={
     },
     subscribe(observer){
         this._callSubscriber=observer;
+    },
+    dispatch(action){
+     this._state.profilePage= profileReducer(this._state.profilePage, action)
+     this._state.dialogsPage= dialogsReducer(this._state.dialogsPage, action)
+        this._callSubscriber(this._state)
     }
+
 }
+
+
 
 
 

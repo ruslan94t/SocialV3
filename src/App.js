@@ -6,11 +6,12 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
-import {updateNewPostText} from "./redux/state";
+import {updateNewPostText} from "./redux/store";
 
 
 
 const App= (props)=> {
+
   return (
     <div className="app-wrapper">
         <Header />
@@ -19,16 +20,14 @@ const App= (props)=> {
             <Switch>
                 <Route  path="/dialogs" >
                     <Dialogs
-                    state={props.state.messagesPage}
-
+                        store={props.store}
                     />
                 </Route>
             </Switch>
             <Switch>
                 <Route path="/profile" >
                     <Profile
-                        updateNewPostText={props.updateNewPostText}
-                        addPost={props.addPost}
+                       dispatch={props.dispatch}
                         profilePage={props.state.profilePage}
                     />
                 </Route>
